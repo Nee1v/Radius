@@ -1,20 +1,26 @@
 package com.example.sos_test
 
-import android.os.Bundle
-import android.util.Log  // Import Log for logging
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.unit.dp
-import com.example.sos_test.ui.theme.SOS_TestTheme
+// An activity is a single screen, can be thought of as a page on a website.
+// A box layout is like a stack, not the data structure, but more literally. It allows
+// you to stack elements and overlap them.
+// A composable is a function that tells the system what to display on the users screen, every UI element
+// such as buttons, text, images, and boxes are a composable function.
+
+import android.os.Bundle // Bundle class is used to pass data between activities, and restore saved state
+import android.util.Log  // Import Log for logging in logcat
+import androidx.activity.ComponentActivity // Needed to create activities that use Jetpack Compose
+import androidx.activity.compose.setContent // Used to define UI
+import androidx.compose.foundation.layout.Box // Used to be able to overlap elements on top of eachother
+import androidx.compose.foundation.layout.fillMaxSize // Used to make a UI element take up as much space as possible
+import androidx.compose.foundation.layout.size // Allows you to set height and width for a composable
+import androidx.compose.foundation.shape.CircleShape // Used to create the buttons circle shape
+import androidx.compose.material3.Button // Allows the use of buttons
+import androidx.compose.material3.Text // Allows the use of text
+import androidx.compose.ui.Alignment // Used to position elements
+import androidx.compose.ui.Modifier // Modifier is as it sounds, it is a tool that describes how a UI element behaves
+import androidx.compose.ui.draw.clip // Allows a composable (UI element) to be "cut" to a certain shape
+import androidx.compose.ui.unit.dp // Helps your app to look good on all devices as the units are density independent
+import com.example.sos_test.ui.theme.SOS_TestTheme // This is the custom theme for my app
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
