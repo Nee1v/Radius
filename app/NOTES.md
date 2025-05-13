@@ -37,3 +37,13 @@ fun CenteredCircleButton(onClick: () -> Unit) {
 - `onClick` is the parameter name for CenteredCircleButton function, it is also a function itself
 - `()` means that onClick takes no input parameters
 - `--> Unit` is similar to saying that the return value is void, Unit = void, --> = return
+
+## Box(modifier = Modifier.fillMaxSize()) {
+- `Box()` initiates a box element used for acting as a container
+- `modifier = Modifier.fillMaxSize()` defines a modifier that fills to max size, this allows the box to be as large as possible, giving the button within more room to be adjusted
+
+## onClick = {
+- `onClick = {` this defines the built in onClick function that is part of the button import
+
+## onClick()  
+- `onClick()` this onClick function is the custom one that we defined in the CenteredCircleButton() function, it invokes the onClick() function defined within our CenteredCircleButton Composable
