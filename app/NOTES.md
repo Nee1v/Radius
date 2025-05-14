@@ -6,8 +6,6 @@
 ## Composables
 - A composable is a function that defines UI elements using Jetpack Compose.
 
-
-
 ## Example function definition (line breakdown)
 
 ```kotlin
@@ -31,19 +29,42 @@ fun CenteredCircleButton(onClick: () -> Unit) {
 }
 ```
 
-## fun CenteredCircleButton(onClick: () -> Unit) {
+# fun CenteredCircleButton(onClick: () -> Unit) {
 - `fun` = function, similar to def in python
 - `CenteredCircleButton` is the function name
 - `onClick` is the parameter name for CenteredCircleButton function, it is also a function itself
 - `()` means that onClick takes no input parameters
 - `--> Unit` is similar to saying that the return value is void, Unit = void, --> = return
 
-## Box(modifier = Modifier.fillMaxSize()) {
+# Box(modifier = Modifier.fillMaxSize()) {
 - `Box()` initiates a box element used for acting as a container
 - `modifier = Modifier.fillMaxSize()` defines a modifier that fills to max size, this allows the box to be as large as possible, giving the button within more room to be adjusted
 
-## onClick = {
+# onClick = {
 - `onClick = {` this defines the built in onClick function that is part of the button import
 
-## onClick()  
+# onClick()  
 - `onClick()` this onClick function is the custom one that we defined in the CenteredCircleButton() function, it invokes the onClick() function defined within our CenteredCircleButton Composable
+
+## NavController (Ability to change activities (pages))
+
+```kotlin
+@Composable
+fun SecondScreen(navController: NavController) { // Function SecondScreen takes in input called navController of type NavController
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text("This is the Second Screen!")
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(onClick = { navController.popBackStack() }) {
+                Text("Go Back")
+            }
+        }
+    }
+}
+```
+
+# fun SecondScreen(navController: NavController) {
+- `navController: NavController` we pass an instance of the NavController to the function to allow the function to navigate to other activities
