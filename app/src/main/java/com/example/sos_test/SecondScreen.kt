@@ -9,15 +9,19 @@ import androidx.compose.ui.unit.dp // Allows for elements to look good on all sc
 import androidx.navigation.NavController // NavController for navigating to other screens
 
 @Composable
-fun SecondScreen(navController: NavController) { // Function SecondScreen takes in input called navController of type NavController
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Column(horizontalAlignment = Alignment.CenterHorizontally) { // Align all child elements horizontally
-            Text("This is the Second Screen!") // Placeholder text
+fun SecondScreen(navController: NavController) {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Text("This is the Second Screen!")
+
             Spacer(modifier = Modifier.height(16.dp))
-            Button(onClick = { navController.popBackStack() }) { // Button to go back to main page
+
+            Button(
+                onClick = {
+                    // Pop the back stack to navigate back to the MainScreen
+                    navController.popBackStack()
+                }
+            ) {
                 Text("Go Back")
             }
         }

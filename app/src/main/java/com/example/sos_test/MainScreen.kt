@@ -1,5 +1,6 @@
 package com.example.sos_test
 
+import android.util.Log // Import Log for logging in logcat
 import androidx.compose.material3.* // Import all material 3 UI elements
 import androidx.compose.runtime.Composable // Allows us to create composables
 import androidx.compose.ui.Alignment // Allows for alignment of elements
@@ -9,18 +10,16 @@ import androidx.compose.ui.unit.dp // Allows for elements to look good on all sc
 import androidx.navigation.NavController // NavController for navigating to other screens
 
 @Composable
-fun MainScreen(navController: NavController) { // Function MainScreen takes in input called navController of type NavController
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) { // Create button from imports to navigate to second page
+fun MainScreen(navController: NavController) {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Button(
             onClick = {
-                navController.navigate("second") // Route user to second page when button is clicked
+                // Navigate to the second screen
+                navController.navigate("second")
             },
-            modifier = Modifier.size(200.dp) // Size of button
+            modifier = Modifier.size(200.dp)
         ) {
-            Text("Go to Second Screen") // Place holder text
+            Text("Go to Second Screen")
         }
     }
 }
